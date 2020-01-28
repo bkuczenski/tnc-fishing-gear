@@ -56,5 +56,26 @@ Essentially:
 
        $ mkvirtualenv tnc-aldfg
 
+   Add support for `jupyter`:
+
+       (tnc-aldfg)$ pip install jupyter
+       (tnc-aldfg)$ python -m ipykernel install --user --name tnc-aldfg
+
    And we're rock and rolling.
+
+## Configuring Git identity
+
+For this, I created an SSH key specifically for GitHub on oberon:
+
+    $ cd ~/.ssh
+    $ ssh-keygen -t rsa -C 'brandon.kuczenski@301south.net` -f ssh_id_oberon_github  # note: use actual Github email address
+    $ cat >> config
+    Host github.com
+      User git
+      IdentityFile ~/.ssh/id_rsa_oberon_github
+    $ cat id_rsa_oberon_github.pub
+    ssh-rsa AAAA....
+
+Then I had to login to github, go to settings / SSH and GPG Keys, make a new SSH key, and paste the contents of the public key file.  Thereafter, I am able to interact with GitHub using the SSH key.
+
 
