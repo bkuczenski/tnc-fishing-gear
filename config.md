@@ -27,34 +27,34 @@ Essentially:
 
  * `gcc` was already installed, but I had remembered this command from before so I ran it:
 
-    $ xcode-select --install
+       $ xcode-select --install
 
  * Homebrew came next:
 
-    $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+       $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
  * The path seemed to already contain `/usr/local/bin` so I simply:
 
-    $ brew install python
+       $ brew install python
 
    which informed me that binaries were installed in `/usr/local/opt/python/libexec/bin/`. So I created a `.bash_profile` and included "export PATH=/usr/local/opt/python/libexec/bin:${PATH}" in that file.  Then
 
-    $ which pip
-    /usr/local/opt/python/libexec/bin/pip
-    $ pip install pipenv
+       $ which pip
+       /usr/local/opt/python/libexec/bin/pip
+       $ pip install pipenv
 
    Reading more, I've decided pipenv does not work for me. So I will stick with pip and virtualenv.
 
-    $ pip uninstall pipenv
-    $ pip install virtualenvwrapper
+       $ pip uninstall pipenv
+       $ pip install virtualenvwrapper
 
    Go back to `.bash_profile` and add the following:
 
-    source /usr/local/bin/virtualenvwrapper.sh
+       source /usr/local/bin/virtualenvwrapper.sh
 
    Now back to reality..
 
-    $ mkvirtualenv tnc-aldfg
+       $ mkvirtualenv tnc-aldfg
 
    And we're rock and rolling.
 
